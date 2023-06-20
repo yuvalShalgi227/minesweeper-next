@@ -1,94 +1,95 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  //padding: 2rem;
-  text-align: center;
-  font-family: "WindSong", cursive;
-  font-weight: 800;
-  font-style: italic;
-}
-.mines-game {
-  //font-family: "Kablammo", cursive;
-  font-family: "Roboto", sans-serif;
+.mines-game-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 0 0.1rem darkslategrey;
-  //border: 1px double #1a1a1a;
-  background-color: #aaa;
-  .header {
+  margin-bottom: 2rem;
+  .mines-game {
+    //font-family: "Kablammo", cursive;
+    font-family: "Roboto", sans-serif;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    height: 3rem;
-    margin: 10px;
-
-    font-weight: bold;
-    border: 2px outset #ddd;
-    cursor: pointer;
-    .header-inner {
-      border: 2px outset #ddd;
-      cursor: pointer;
-      width: 1.8rem;
-      height: 1.5rem;
-      align-content: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      &.timer {
-        width: 3rem;
-      }
-      &.mine-counter {
-        width: 3rem;
-      }
-    }
-  }
-
-  .board {
-    display: flex;
-    background-color: #aaa;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    box-shadow: 0 0 0 0.1rem darkslategrey;
+    //border: 1px double #1a1a1a;
+    background-color: #aaa;
 
-    .row {
+    .header {
       display: flex;
-      justify-content: center;
-    }
+      justify-content: space-around;
+      align-items: center;
+      width: 80%;
+      height: 3rem;
+      margin: 10px;
 
-    .cell {
-      box-sizing: border-box;
+      font-weight: bold;
       border: 2px outset #ddd;
       cursor: pointer;
-      width: 1.5rem;
-      height: 1.5rem;
 
+      .header-inner {
+        border: 2px outset #ddd;
+        cursor: pointer;
+        width: 1.8rem;
+        height: 1.5rem;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        &.timer {
+          width: 3rem;
+        }
+
+        &.mine-counter {
+          width: 3rem;
+        }
+      }
+    }
+
+    .board {
       display: flex;
+      background-color: #aaa;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-weight: bold;
 
-      //border: 0.1rem solid #ccc;
-
-      &.mine {
-        //background-color: red;
-        border: 1px solid grey;
+      .row {
+        display: flex;
+        justify-content: center;
       }
 
-      &.safe {
-        //background-color: green;
-        border: 1px solid grey;
-      }
-      &.win {
-        animation: colorChange 2s forwards linear;
-        animation-delay: calc(var(--row) * 0.2s + var(--col) * 0.1s);
+      .cell {
+        box-sizing: border-box;
+        border: 2px outset #ddd;
+        cursor: pointer;
+        width: 1.5rem;
+        height: 1.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+
+        //border: 0.1rem solid #ccc;
+
+        &.mine {
+          //background-color: red;
+          border: 1px solid grey;
+        }
+
+        &.safe {
+          //background-color: green;
+          border: 1px solid grey;
+        }
+
+        &.win {
+          animation: colorChange 2s forwards linear;
+          animation-delay: calc(var(--row) * 0.2s + var(--col) * 0.1s);
+        }
       }
     }
   }
 }
-
 @keyframes pop {
   0% {
     transform: scale(1);

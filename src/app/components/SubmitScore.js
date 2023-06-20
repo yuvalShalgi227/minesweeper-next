@@ -1,11 +1,11 @@
-// src/components/NameModal.js
+// src/components/SubmitScore.js
 
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-Modal.setAppElement("#__next"); // replaces '#root'
+Modal.setAppElement("#game-wrapper"); // replaces '#root'
 
-function NameModal({ isOpen, onRequestClose, onNameSubmit }) {
+function SubmitScore({ isOpen, onRequestClose, onNameSubmit }) {
   const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
@@ -33,4 +33,4 @@ function NameModal({ isOpen, onRequestClose, onNameSubmit }) {
   );
 }
 
-export default NameModal;
+export default SubmitScore;
