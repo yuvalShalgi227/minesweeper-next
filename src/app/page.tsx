@@ -13,7 +13,6 @@ export default function Home() {
       <div className="game-wrapper">
         <Game />
       </div>
-      <Scoreboard />
     </main>
   );
 }

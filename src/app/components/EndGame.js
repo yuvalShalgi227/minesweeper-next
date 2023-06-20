@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import SubmitScore from "./SubmitScore";
 import { postScore } from "@/utils/api";
 
-const EndGame = (score) => {
+const EndGame = ({ scoreSumbit, score }) => {
   const [modalIsOpen, setModalIsOpen] = useState(true);
   const [name, setName] = useState("");
 
@@ -15,9 +15,10 @@ const EndGame = (score) => {
   const handleNameSubmit = async (newName) => {
     setName(newName);
     setModalIsOpen(false);
-    const res = score.score();
+    const res = score;
     console.log("score", res);
     await postScore(newName, res);
+    scoreSumbit();
   };
 
   return (
