@@ -16,13 +16,13 @@ const EndGame = ({ scoreSumbit, score }) => {
     setName(newName);
     setModalIsOpen(false);
     const res = score;
-    console.log("score", res);
     await postScore(newName, res);
     scoreSumbit();
   };
 
   return (
     <div>
+      <h2>score: {score}</h2>
       <SubmitScore
         isOpen={modalIsOpen}
         onRequestClose={handleCloseModal}

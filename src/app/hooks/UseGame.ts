@@ -128,13 +128,8 @@ export const UseGame = () => {
     const timeDiff = (Date.now() - startTime) / 10000;
     ///calc score
     const multi = didWin ? 99 : 1;
-    console.log("timeDiff", timeDiff);
-    console.log("multi", multi);
-    console.log("numberOfMines", numberOfMines);
-    console.log("revealedCells", revealedCells);
     const score = revealedCells * multi * numberOfMines - timeDiff;
-    console.log("score!", score);
-    return Math.floor(score * 5);
+    return Math.floor(score * 10);
   };
   const handleClick = (rowIndex: number, colIndex: number) => {
     const newGrid = [...grid];

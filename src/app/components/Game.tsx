@@ -15,14 +15,13 @@ export const Game = () => {
     revealedCells,
     startTime,
     score,
-    setScore,
   } = UseGame();
-  const endGameMessage = didWin ? "You Win!" : "Game Over";
+  const endGameMessage = didWin ? `You Win! with ${score}` : "Game Over";
 
   let stam = 0;
   const scoreSumbit = () => {
+    //todo remove this
     stam++;
-    console.log("stamOut", stam);
   };
 
   return (

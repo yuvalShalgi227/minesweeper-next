@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 export default function Scoreboard({ score }) {
   useEffect(() => {
-    console.log("stam", score);
     mutate("/api/scores");
   }, [score]);
   const { data, error } = useSWR("/api/scores", fetcher);
