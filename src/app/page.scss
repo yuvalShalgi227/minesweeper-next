@@ -18,6 +18,9 @@ body,
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  .game-title {
+    margin-top: 3rem;
+  }
   .game-wrapper {
     height: 100%;
     width: 50%;
