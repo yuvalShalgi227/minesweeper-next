@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Modal from "react-modal";
+import "../page.scss";
 
 Modal.setAppElement("#game-wrapper"); // replaces '#root'
 
@@ -18,6 +19,7 @@ function SubmitScore({ isOpen, onRequestClose, onNameSubmit }) {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Enter Name"
+      className="modal-score"
     >
       <h2>Enter Your Name</h2>
       <form onSubmit={handleSubmit}>

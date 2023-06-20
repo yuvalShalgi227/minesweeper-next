@@ -2,27 +2,59 @@ html,
 body,
 #__next {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
+.score-wrapper {
+  border: 4px outset #ddd;
+  box-shadow: darkslategrey 1rem 1rem 1rem 1rem;
+  width: 20rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  h2 {
+    margin-bottom: 1rem;
+    margin-top: 0.1rem;
+    padding: 0;
+  }
+}
+
+.ReactModal__Overlay {
+  //opacity: 1;
+  transition: opacity 200ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  //background-color: saddlebrown;
+  margin-bottom: 20rem;
+}
 .main {
   height: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  //max-width: 1280px;
+  width: 100%;
   //padding: 2rem;
+  pading: 0.2rem;
   text-align: center;
   font-family: "WindSong", cursive;
   font-weight: 800;
   font-style: italic;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  //margin-bottom: 10rem;
   .game-title {
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
   .game-wrapper {
-    height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;

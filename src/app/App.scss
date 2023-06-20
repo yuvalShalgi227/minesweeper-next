@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+
   .mines-game {
     //font-family: "Kablammo", cursive;
     font-family: "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 0 0.1rem darkslategrey;
+    //box-shadow: darkslategrey 1rem 1rem 1rem 1rem;
+    border: 2px darkslategrey solid;
     //border: 1px double #1a1a1a;
     background-color: #aaa;
 
@@ -62,8 +64,8 @@
         box-sizing: border-box;
         border: 2px outset #ddd;
         cursor: pointer;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.35rem;
+        height: 1.35rem;
 
         display: flex;
         justify-content: center;

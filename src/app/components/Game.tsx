@@ -13,6 +13,7 @@ export const Game = () => {
     resetGame,
     revealedCells,
     startTime,
+    calcScore,
   } = UseGame();
   const endGameMessage = didWin ? "You Win!" : "Game Over";
 
@@ -20,7 +21,7 @@ export const Game = () => {
     <div id="game-wrapper" className="mines-game-wrapper">
       {gameOver ? (
         <div>
-          <EndGame />
+          <EndGame score={calcScore} />
         </div>
       ) : null}
       <div className="mines-game">

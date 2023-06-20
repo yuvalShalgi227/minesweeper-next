@@ -1,6 +1,7 @@
 "use client";
 import useSWR from "swr";
 import { fetcher } from "src/utils/fetcher";
+import { useEffect } from "react";
 
 export default function Scoreboard() {
   const { data, error } = useSWR("/api/scores", fetcher);
@@ -9,17 +10,22 @@ export default function Scoreboard() {
   if (!data) return <div>Loading...</div>;
 
   // render data
-  return (
-    <div>
-      <h1>Scoreboard</h1>
-      <ul>
-        {data.data.map((item, index) => (
+  const showData = () =>
+    //retrun top 3 scores
+    data.data.map((item, index) => {
+      if (index < 3) {
+        return (
           <li key={index}>
             <span>{item.name}:</span>
             <span>{item.score}</span>
           </li>
-        ))}
-      </ul>
+        );
+      }
+    });
+  return (
+    <div className="score-wrapper">
+      <h2>Scoreboard</h2>
+      <ul>{showData()}</ul>
     </div>
   );
 }

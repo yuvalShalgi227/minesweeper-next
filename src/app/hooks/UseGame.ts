@@ -72,6 +72,7 @@ export const UseGame = () => {
   const [didWin, setDidWin] = useState(false);
   const [revealedCells, setRevealedCells] = useState(0);
   const [startTime, setStartTime] = useState(Date.now());
+  //const [totalGameTime, setTotalGameTime] = useState(0);
 
   const revrealAll = () => {
     const newGrid = [...grid];
@@ -122,6 +123,14 @@ export const UseGame = () => {
     setGrid(newGrid);
   };
 
+  const calcScore = (): number => {
+    setGameOver(true);
+    const timeDiff = (Date.now() - startTime) / 1000;
+    ///calc score
+    const multi = didWin ? 99 : 1;
+    const score = revealedCells * multi * mineCount - timeDiff / 20;
+    return score;
+  };
   const handleClick = (rowIndex: number, colIndex: number) => {
     const newGrid = [...grid];
     if (newGrid[rowIndex][colIndex].value === 0) {
@@ -163,5 +172,6 @@ export const UseGame = () => {
     revealedCells,
     resetGame,
     startTime,
+    calcScore,
   };
 };
