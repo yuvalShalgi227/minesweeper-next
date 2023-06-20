@@ -1,19 +1,11 @@
+"use client";
 import useSWR from "swr";
-
-async function fetcher(url) {
-  const res = await fetch(url);
-  const data = await res.json();
-
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-}
+import { fetcher } from "src/utils/fetcher";
 
 export default function Scoreboard() {
   const { data, error } = useSWR("/api/scores", fetcher);
 
-  if (error) return <div>Your error message here</div>;
+  if (error) return <div>error: {JSON.stringify(error)}</div>;
   if (!data) return <div>Loading...</div>;
 
   // render data

@@ -1,11 +1,9 @@
-import dbConnect from "../../utils/dbConnect";
-import Score from "../../models/Score";
-
-dbConnect();
+import dbConnect from "src/utils/dbConnect";
+import Score from "src/models/Score";
 
 export default async (req, res) => {
   const { method } = req;
-
+  await dbConnect();
   switch (method) {
     case "GET":
       try {

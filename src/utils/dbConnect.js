@@ -1,18 +1,18 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const connection = {}; /* creating connection object*/
+const connection = {};
 
-module.exports = dbConnect = async () => {
-  /* check if we have connection to our databse */
+async function dbConnect() {
   if (connection.isConnected) {
     return;
   }
 
-  /* connecting to our database */
   const db = await mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
 
   connection.isConnected = db.connections[0].readyState;
-};
+}
+
+export default dbConnect;

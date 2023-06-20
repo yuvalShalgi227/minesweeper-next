@@ -2,7 +2,7 @@ import Image from "next/image";
 //import styles from './page.scss'
 import { Game } from "@/app/components/Game";
 import "./page.scss";
-import Scoreboard from "@/app/pages/scoreboard";
+import Scoreboard from "@/pages/scoreboard";
 export default function Home() {
   return (
     <main className={"main"}>
