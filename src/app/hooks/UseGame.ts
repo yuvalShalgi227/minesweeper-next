@@ -134,7 +134,7 @@ export const UseGame = () => {
     console.log("revealedCells", revealedCells);
     const score = revealedCells * multi * numberOfMines - timeDiff;
     console.log("score!", score);
-    return Math.floor(score * 10);
+    return Math.floor(score * 5);
   };
   const handleClick = (rowIndex: number, colIndex: number) => {
     const newGrid = [...grid];
