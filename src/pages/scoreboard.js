@@ -23,7 +23,7 @@ export default function Scoreboard({ score }) {
         return (
           <li key={index}>
             <span>{item.name}:</span>
-            ----
+
             <span>{item.score}</span>
           </li>
         );

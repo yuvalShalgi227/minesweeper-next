@@ -7,6 +7,7 @@ body,
   padding: 0;
 }
 .score-wrapper {
+  font-family: "Press Start 2P", cursive;
   border: 4px outset #ddd;
   box-shadow: darkslategrey 1rem 1rem 1rem 1rem;
   width: 20rem;
@@ -17,6 +18,14 @@ body,
     margin-bottom: 1rem;
     margin-top: 0.1rem;
     padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-around;
+    //bullets
+    list-style-type: none;
+    //align-items: f;
+    margin-bottom: 0.2rem;
   }
 }
 
