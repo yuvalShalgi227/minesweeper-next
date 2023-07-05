@@ -3,13 +3,9 @@ import axios from "axios";
 export default async (req, res) => {
   if (req.method === "POST") {
     try {
-      const response = await axios.post(
-        "http://100.88.5.106:8000/chat",
-        req.body,
-        {
-          headers: req.headers,
-        }
-      );
+      const response = await axios.post("http://54.167.14.4/chat", req.body, {
+        headers: req.headers,
+      });
       res.status(200).json(response.data);
     } catch (error) {
       res.status(500).json({ error: error.toString() });
