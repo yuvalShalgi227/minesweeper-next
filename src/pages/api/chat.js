@@ -34,7 +34,7 @@ export default async (req, res) => {
 
   if (req.method === "POST") {
     try {
-      const response = await axios.post("http://54.167.14.4/chat", req.body, {
+      const response = await axios.post("https://cf77-54-167-14-4.ngrok-free.app/chat", req.body, {
         headers: headersToForward,
       });
       res.status(200).json(response.data);
